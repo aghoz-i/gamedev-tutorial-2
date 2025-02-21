@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://ce7dgfr2c3wwn"]
+
+[ext_resource type="Script" path="res://scenes/NextLevel/ShipMovement.gd" id="2_64qn8"]
+[ext_resource type="PackedScene" uid="uid://runpqm2m0lfg" path="res://scenes/NextLevel/SnowPlatform.tscn" id="2_rkt71"]
+[ext_resource type="PackedScene" uid="uid://d22ho3521lm7l" path="res://scenes/NextLevel/GreenShip.tscn" id="3_ca1g2"]
+[ext_resource type="PackedScene" uid="uid://gun2ywdcovbt" path="res://scenes/NextLevel/FinishArea.tscn" id="3_t4bjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwk4i"]
+size = Vector2(1152, 648)
+
+[node name="NextLevel" type="Node"]
+
+[node name="GreenShip" parent="." instance=ExtResource("3_ca1g2")]
+z_index = 5
+position = Vector2(150, 200)
+rotation = 1.5708
+script = ExtResource("2_64qn8")
+
+[node name="Platforms" type="Node2D" parent="."]
+position = Vector2(0, 383)
+
+[node name="SnowPlatform" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(178, -44)
+
+[node name="SnowPlatform2" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(321, 195)
+
+[node name="SnowPlatform3" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(755, -103)
+
+[node name="SnowPlatform4" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(826, -103)
+
+[node name="SnowPlatform5" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(108, -44)
+
+[node name="SnowPlatform6" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(1088, -248)
+
+[node name="SnowPlatform7" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(944, -248)
+
+[node name="SnowPlatform8" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(1016, -248)
+
+[node name="SnowPlatform9" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(249, -44)
+
+[node name="SnowPlatform10" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(391, 195)
+
+[node name="SnowPlatform11" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(461, 195)
+
+[node name="SnowPlatform12" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(612, 120)
+
+[node name="SnowPlatform13" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(682, 120)
+
+[node name="SnowPlatform14" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(752, 120)
+
+[node name="SnowPlatform15" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(900, 180)
+
+[node name="SnowPlatform16" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(970, 180)
+
+[node name="SnowPlatform17" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(1069, 100)
+
+[node name="SnowPlatform18" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(966, 0)
+
+[node name="SnowPlatform19" parent="Platforms" instance=ExtResource("2_rkt71")]
+position = Vector2(707, -191)
+
+[node name="FinishArea" parent="." instance=ExtResource("3_t4bjn")]
+position = Vector2(1088, 61)
+
+[node name="GameArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea"]
+position = Vector2(576, 324)
+shape = SubResource("RectangleShape2D_cwk4i")
+
+[connection signal="body_entered" from="FinishArea" to="GreenShip" method="_on_FinishArea_body_entered"]
+[connection signal="body_exited" from="GameArea" to="GreenShip" method="_on_GameArea_body_exited"]

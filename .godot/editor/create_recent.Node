@@ -1,0 +1,9 @@
+Label
+Control
+CollisionShape2D
+Area2D
+Node2D
+Sprite2D
+CharacterBody2D
+Parallax2D
+RigidBody2D

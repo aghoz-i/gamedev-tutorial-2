@@ -1,5 +1,10 @@
 res://default_env.tres
+res://scenes/NextLevel/NextLevel.tscn
+res://scenes/ObjectiveArea.gd
+res://scenes/NextLevel/FinishArea.gd
+res://scenes/NextLevel/GameArea.gd
+res://scenes/NextLevel/GreenShip.tscn
+res://scenes/NextLevel/SnowPlatform.tscn
 res://scenes/MainLevel.tscn
-res://scenes/StonePlatform.tscn
-res://scenes/BlueShip.tscn
-res://scenes/PlatformBlue.gd
+res://scenes/NextLevel/ShipMovement.gd
+res://scenes/NextLevel/WinAnnounce.tscn

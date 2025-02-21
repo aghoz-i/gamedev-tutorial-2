@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://gun2ywdcovbt"]
+
+[ext_resource type="Texture2D" uid="uid://dh610bbucs6rh" path="res://assets/fasilkom.png" id="1_m42vv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq4md"]
+size = Vector2(70, 73)
+
+[node name="FinishArea" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.466667, 0.466667)
+texture = ExtResource("1_m42vv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xq4md")
